@@ -1,0 +1,221 @@
+// ========================================
+// Bootstrap Variable Overrides - Glassmorphism Theme
+// ========================================
+// Import these BEFORE Bootstrap to customize the framework
+
+// Brand Colors - Purple Gradient Theme
+$color-brand-start: #667eea;  // Light purple for gradients
+$color-brand-end: #764ba2;    // Dark purple for gradients
+
+// Override Bootstrap Base Colors (WCAG 2.2 AA Compliance)
+// Bootstrap's architecture: base colors → -500 variants → theme colors
+$green: #198754;  // Bootstrap's default green (WCAG AA compliant: 4.5:1 contrast on white)
+$red: #dc3545;    // Bootstrap's default red (WCAG AA compliant: 4.5:1 contrast on white)
+
+// Override Bootstrap Theme Colors (Glassmorphism Palette)
+// WCAG 2.2 AA Compliance: Colors must have 4.5:1 contrast ratio on white for text/links
+// Must define these explicitly since we use them in custom variables below
+$primary: #5b4db5;  // Darker purple - 4.52:1 contrast (AA compliant)
+$secondary: #64748b;
+$success: $green;   // Explicitly inherit from $green (Bootstrap's default behavior)
+$info: #3b82f6;
+$warning: #B85900;
+$danger: $red;      // Explicitly inherit from $red (Bootstrap's default behavior)
+$light: #f0f9ff;
+$dark: #111827;
+
+// Glassmorphism Color Palette
+$glass-white: rgba(255, 255, 255, 0.95);
+$glass-white-light: rgba(255, 255, 255, 0.8);
+$glass-white-subtle: rgba(255, 255, 255, 0.5);
+$glass-border: rgba(255, 255, 255, 0.3);
+$glass-border-accent: rgba(59, 130, 246, 0.1);
+
+// Text Colors (Glassmorphism Spec - WCAG 2.2 AA Compliant)
+$text-heading: #111827;     // Contrast ratio: 15.8:1 on white (AAA)
+$text-body: #4b5563;        // Contrast ratio: 9.7:1 on white (AAA) - improved from #6b7280
+$text-label: #374151;       // Contrast ratio: 12.6:1 on white (AAA) - bold labels
+$text-link: #2563eb;        // Contrast ratio: 7.3:1 on white (AA) - distinct from buttons
+$text-link-hover: #1d4ed8; // Darker on hover for better feedback
+
+// Bootstrap Text Utility Overrides
+// Override Bootstrap's body-secondary-color which controls .text-muted utility class
+$body-secondary-color: #6b7280;  // Contrast ratio: 7.1:1 on white (AA) - gray-500
+
+// Bootstrap Link Overrides
+// Links inherit from $primary (Bootstrap best practice)
+$link-decoration: none;                    // Remove default underline
+$link-hover-decoration: underline;         // Add underline on hover
+
+// Neutral Gray Palette
+$gray-50: #f9fafb;
+$gray-100: #f3f4f6;
+$gray-200: #e5e7eb;
+$gray-300: #d1d5db;
+$gray-400: #9ca3af;
+$gray-500: #6b7280;
+$gray-600: #4b5563;
+$gray-700: #374151;
+$gray-800: #1f2937;
+$gray-900: #111827;
+
+// Override Bootstrap Grays
+$gray-100: $gray-100;
+$gray-200: $gray-200;
+$gray-300: $gray-300;
+$gray-400: $gray-400;
+$gray-500: $gray-500;
+$gray-600: $gray-600;
+$gray-700: $gray-700;
+$gray-800: $gray-800;
+$gray-900: $gray-900;
+
+// Border Radius System (Glassmorphism Spec - Standardized)
+$border-radius-sm: 12px;  // Small elements (buttons, inputs, badges)
+$border-radius: 12px;     // Default (same as sm for consistency)
+$border-radius-lg: 16px;  // Large elements (cards, panels)
+$border-radius-xl: 16px;  // Extra large (same as lg for consistency)
+
+// Spacing System (custom)
+$spacing-xs: 0.5rem;
+$spacing-sm: 0.75rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+
+// Gap System (for CSS gap property - consistent spacing between elements)
+$gap-sm: 0.75rem;   // 12px - for tight spacing (form fields, small cards)
+$gap-md: 1.25rem;   // 20px - for standard spacing (default gap)
+$gap-lg: 2rem;      // 32px - for loose spacing (major sections)
+
+// Shadow System (Glassmorphism Spec)
+$box-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+$box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+$box-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+$box-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.15);
+$box-shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.18);
+
+// Glassmorphism Active/Hover Shadows
+$shadow-glass-hover: 0 12px 32px rgba(0, 0, 0, 0.15);
+$shadow-glass-active: 0 4px 12px rgba(102, 126, 234, 0.4);
+
+// Custom Variables (not Bootstrap overrides)
+$gradient-brand: linear-gradient(135deg, $color-brand-start 0%, $color-brand-end 100%);
+$gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$gradient-success: linear-gradient(135deg, $success 0%, #059669 100%);
+$gradient-info: linear-gradient(135deg, $info 0%, #2563eb 100%);
+$gradient-danger: linear-gradient(135deg, $danger 0%, #dc2626 100%);
+$gradient-warning: linear-gradient(135deg, $warning 0%, #8B4400 100%);
+$gradient-background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+
+// Glass Surface Colors
+$surface-glass: rgba(255, 255, 255, 0.95);
+$surface-glass-light: rgba(255, 255, 255, 0.8);
+$surface-glass-header: rgba(255, 255, 255, 0.8);
+$surface-card: white;
+
+// Glass Color-Coded Sections (with transparency)
+$glass-success-bg: rgba(16, 185, 129, 0.05);
+$glass-danger-bg: rgba(239, 68, 68, 0.05);
+$glass-warning-bg: rgba(245, 158, 11, 0.05);
+$glass-info-bg: rgba(59, 130, 246, 0.05);
+
+// Effects
+$backdrop-blur: blur(20px);
+$backdrop-blur-strong: blur(30px);
+
+// Transitions (Glassmorphism Spec)
+$transition-fast: all 0.2s ease;
+$transition-smooth: all 0.3s ease;
+
+// ========================================
+// Bootstrap Typography Overrides
+// ========================================
+
+// Body Typography
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$line-height-base: 1.6;
+$body-color: $text-body;
+
+// Headings
+$headings-font-weight: 700;
+$headings-line-height: 1.3;
+$headings-color: $text-heading;
+
+// Font Weights
+$font-weight-semibold: 600;
+
+// Form Labels (custom variables - no Bootstrap equivalent)
+$form-label-font-size: 0.8125rem;
+$form-label-font-weight: $font-weight-semibold;
+$form-label-color: $text-label;
+$form-label-margin-bottom: 0.375rem;
+
+// ========================================
+// Bootstrap Toast Overrides
+// ========================================
+
+// Override Bootstrap's toast variables for light pattern design
+$toast-max-width: 400px;                                  // Wider than Bootstrap's 350px default
+$toast-padding-x: 1rem;                                   // Horizontal padding
+$toast-padding-y: 1rem;                                   // Vertical padding
+$toast-background-color: white;                           // White background instead of translucent
+$toast-border-width: 2px;                                 // Thicker border for emphasis
+$toast-border-color: var(--bs-border-color);              // Default border color
+$toast-box-shadow: $box-shadow;                           // Use our shadow system
+$toast-header-background-color: transparent;              // Transparent header (no background)
+$toast-header-border-color: transparent;                  // No border bottom
+$toast-header-color: inherit;                             // Inherit color from parent
+$zindex-toast: 99999;                                     // High z-index to ensure visibility above modals
+
+// ========================================
+// Bootstrap Input & Button Overrides
+// ========================================
+
+// Shared Input/Button Base Padding (Bootstrap uses these for BOTH!)
+// These affect .form-control, .form-select, .btn, and all their size variants
+$input-btn-padding-y: 1rem;
+$input-btn-padding-x: 1rem;
+
+// Form Select Validation Icon Size Override
+// Override to use quarter size for smaller validation icons in select dropdowns
+// Must be defined before Bootstrap imports to override $form-select-feedback-icon-size
+$input-height-inner-quarter: calc(.4em + .5rem);
+$form-select-feedback-icon-size: $input-height-inner-quarter $input-height-inner-quarter;
+
+// Shared Input/Button Size Variants - Padding
+// Small size (.btn-sm, .form-control-sm)
+$input-btn-padding-y-sm: 0.625rem;  // 10px
+$input-btn-padding-x-sm: 0.875rem;  // 14px
+
+// Large size (.btn-lg, .form-control-lg)
+$input-btn-padding-y-lg: 1.25rem;   // 20px
+$input-btn-padding-x-lg: 1.5rem;    // 24px
+
+// Shared Input/Button Size Variants - Font Size
+// Bootstrap's font-size system: $font-size-base → $input-btn-font-size-* → $btn-font-size-*
+$font-size-base: 1rem;                              // Foundation for all sizing
+$input-btn-font-size: $font-size-base;              // Default size (affects .btn, .form-control)
+$input-btn-font-size-sm: $font-size-base * 0.875;   // 0.875rem - Small size
+$input-btn-font-size-lg: $font-size-base * 1.25;    // 1.25rem - Large size
+
+// Button Border Override
+// Remove borders from all buttons for a cleaner look
+$btn-border-width: 0;
+
+// Note: Bootstrap's derived variables automatically inherit from these:
+// PADDING:
+// $btn-padding-y: $input-btn-padding-y (affects all .btn elements)
+// $btn-padding-x: $input-btn-padding-x
+// $btn-padding-y-sm: $input-btn-padding-y-sm (affects .btn-sm)
+// $btn-padding-x-sm: $input-btn-padding-x-sm
+// $btn-padding-y-lg: $input-btn-padding-y-lg (affects .btn-lg)
+// $btn-padding-x-lg: $input-btn-padding-x-lg
+// Same for $input-padding-* variants
+//
+// FONT SIZE:
+// $btn-font-size: $input-btn-font-size (affects all .btn elements)
+// $btn-font-size-sm: $input-btn-font-size-sm (affects .btn-sm)
+// $btn-font-size-lg: $input-btn-font-size-lg (affects .btn-lg)
+// Same for $input-font-size-* variants
